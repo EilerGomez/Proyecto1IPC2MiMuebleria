@@ -20,5 +20,6 @@
                 response.sendRedirect("index.jsp");
             }
         %>
+        <h1>Hola programadores desde admin area de los administradores</h1>
     </body>
 </html>

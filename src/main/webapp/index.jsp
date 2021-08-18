@@ -1,3 +1,4 @@
+<%@page import="java.sql.*"%>
 <%@page import="com.mycompany.proyecto1ipc2.ConexionSQL"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -35,38 +36,34 @@
                 <button type="submit" class="btn btn-primary" name="boton" id="boton">Ingresar</button>
             </form>
             <%
-
+                String area = "3";
+                if (request.getParameter("combobox") != null) {
+                    area = request.getParameter("combobox");
+                }
                 if (request.getParameter("boton") != null) {
                     String usuario = request.getParameter("usuario");
                     String password = request.getParameter("password");
                     HttpSession sesion = request.getSession();
-                    ConexionSQL.verificarUsuario(usuario, password);
-                    while (ConexionSQL.result.next()) {
-                        sesion.setAttribute("logueado", "1");
-                        sesion.setAttribute("usuario", ConexionSQL.result.getString("nombre"));
-                        sesion.setAttribute("id", ConexionSQL.result.getString("id"));
-                        response.sendRedirect("index.jsp");
+
+                    try {
+                        ConexionSQL.verificarUsuario(usuario, password, area);
+                        while (ConexionSQL.result.next()) {
+                            sesion.setAttribute("logueado", 1);
+                            sesion.setAttribute("usuario", ConexionSQL.result.getString("nombre"));
+                            sesion.setAttribute("id", ConexionSQL.result.getString("id"));
+                            if (area.equals("3")) {
+                                response.sendRedirect("AreaAdministracion.jsp");
+                            }
+
+                        }
+                        out.println("<div class=\"alert alert-danger\" role=\"alert\">Usuario no válido</div>");
+
+                    } catch (Exception e) {
+                        out.println(e);
                     }
-                    out.println("<div class=\"alert alert-danger\" role=\"alert\">Usuario no válido</div>");
+
                 }
-                /*if (request.getParameter("boton") != null) {
-                   
-                    String usuario = request.getParameter("usuario");
-                    String password = request.getParameter("password");
-                    HttpSession sesion = request.getSession();
-                    ConexionSQL.verificarUsuario(usuario, password);
-                    while (ConexionSQL.result.next()) {
-                        sesion.setAttribute("logueado", "1");
-                        sesion.setAttribute("usuario", ConexionSQL.result.getString("nombre"));
-                        sesion.setAttribute("id", ConexionSQL.result.getString("id"));
-                      
-                            response.sendRedirect("AreaAdministracion.jsp");
-                        
 
-                    }
-                    out.println("<div class=\"alert alert-danger\" role=\"alert\">Area no encontrada</div>");
-
-                }*/
             %>
             <br/>
             <p id="marca">MI MUEBLERIA/</p>

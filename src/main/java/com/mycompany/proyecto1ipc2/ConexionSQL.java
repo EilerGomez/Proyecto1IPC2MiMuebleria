@@ -33,10 +33,10 @@ public class ConexionSQL {
         }
     }
 
-    public static void verificarUsuario(String usuario, String password) {
+    public static void verificarUsuario(String usuario, String password, String area) {
         try {
             iniciarConexion();
-            result = stmt.executeQuery("select * from usuarios where usuario='" + usuario + "' and password='" + password + "';");
+            result = stmt.executeQuery("select * from usuarios where nombre='" + usuario + "' and password='" + password + "' and area='" +area+ "';");
         } catch (SQLException x) {
             Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, x);
         }
