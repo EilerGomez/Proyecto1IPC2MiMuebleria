@@ -36,9 +36,53 @@ public class ConexionSQL {
     public static void verificarUsuario(String usuario, String password, String area) {
         try {
             iniciarConexion();
-            result = stmt.executeQuery("select * from usuarios where nombre='" + usuario + "' and password='" + password + "' and area='" +area+ "';");
+            result = stmt.executeQuery("select * from usuarios where nombre='" + usuario + "' and password='" + password + "' and area='" + area + "';");
+
         } catch (SQLException x) {
             Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, x);
+        } finally {
+            try {
+                if (result != null && result.isClosed()==false) {
+                    result.close();
+                }
+                result=null;
+                if(stmt!=null && stmt.isClosed()==false){
+                    stmt.close();
+                }
+                stmt=null;
+                if(con!=null && con.isClosed()==false){
+                    con.close();
+                }
+                con=null;
+            } catch (SQLException ex) {
+                Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
+    public static void insertarNuevoUsuario(String id, String nombre, String apellido, String password, String area) {
+        try {
+            iniciarConexion();
+            stmt.executeUpdate("INSERT INTO usuarios VALUES('" + id + "','" + nombre + "','" + apellido + "','" + password + "','" + area + "');");
+        } catch (SQLException x) {
+            Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, x);
+        } finally {
+            try {
+                if (result != null && result.isClosed()==false) {
+                    result.close();
+                }
+                result=null;
+                if(stmt!=null && stmt.isClosed()==false){
+                    stmt.close();
+                }
+                stmt=null;
+                if(con!=null && con.isClosed()==false){
+                    con.close();
+                }
+                con=null;
+            } catch (SQLException ex) {
+                Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 }
