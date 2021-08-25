@@ -1,8 +1,4 @@
-<%-- 
-    Document   : AreaAdministracion
-    Created on : 18/08/2021, 11:42:03 AM
-    Author     : HP
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -27,7 +23,7 @@
                 <div class="container-fluid">
                     <a class="navbar-brand">AREA DE ADMINISTRACIÓN</a>
                     <form class="d-flex" action="logOut.jsp">
-                        <a> <img src="https://img.icons8.com/ios-filled/50/000000/user.png"/> <%=sesion.getAttribute("usuario")%>
+                        <a href="modificarUsuario.jsp"> <img src="https://img.icons8.com/ios-filled/50/000000/user.png"/> <%=sesion.getAttribute("usuario")%>
                         </a>
                         <button class="btn btn-outline-danger ml-2" type="submit" >log out</button>
                     </form>

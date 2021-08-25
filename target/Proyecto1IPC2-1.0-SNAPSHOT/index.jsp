@@ -13,17 +13,17 @@
     </head>
     <body>
         <div id="cuadro">
-            <form method="post" action="index.jsp">
+            <form method="POST" action= "ServletUsuarios">
                 <p id="titulo"> INICIAR SESION</p>
                 <hr>
                 <br/><br/>
                 <label id="subtitulo1">NOMBRE DE USUARIO</label>     
                 <br/><br/>
-                <input type="text" name="usuario" class="entrada" required="requerido" value=""/>
+                <input type="text" name="usuario" class="entrada" required="requerido" value="" placeholder="Su nombre"/>
                 <br/><br/>
                 <label id="subtitulo2">CONTRASEÑA</label>   
                 <br/><br/>
-                <input type="password" name="password" class="entrada" required="requerido"/>
+                <input type="password" name="password" class="entrada" required="requerido" placeholder="Su contraseña"/>
                 <br/><br/>
                 <label id="subtitulo3">AREA A LA QUE PERTENECE</label>   
                 <select class="form-select" aria-label="Default select example" id="combo" name="combobox" >
@@ -37,7 +37,7 @@
                 <button type="submit" class="btn btn-primary" name="boton" id="boton">Ingresar</button>
             </form>
             <%
-                String area = "3";
+                /*String area = "3";
                 if (request.getParameter("combobox") != null) {
                     area = request.getParameter("combobox");
                 }
@@ -51,6 +51,7 @@
                         while (ConexionSQL.result.next()) {
                             sesion.setAttribute("logueado", 1);
                             sesion.setAttribute("usuario", ConexionSQL.result.getString("nombre"));
+                            sesion.setAttribute("apellido", ConexionSQL.result.getString("apellido"));
                             sesion.setAttribute("id", ConexionSQL.result.getString("id"));
                             if (area.equals("3")) {
                                 response.sendRedirect("AreaAdministracion.jsp");
@@ -61,13 +62,14 @@
                             }
 
                         }
+                        ConexionSQL.cerrarConexion();
                         out.println("<div class=\"alert alert-danger\" role=\"alert\">Usuario no válido</div>");
 
-                    } catch (Exception e) {
+                    } catch (NullPointerException e) {
                         out.println(e);
                     }
 
-                }
+                }*/
 
             %>
             <br/>
