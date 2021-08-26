@@ -19,21 +19,27 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author HP
  */
-@WebServlet(name = "AlmacenarPiezaVentaServlet", urlPatterns = {"AlmacenarPiezaVentaServlet"})
+@WebServlet(name = "AlmacenarPiezaVentaServlet", urlPatterns = {"/AlmacenarPiezaVentaServlet"})
 public class AlmacenarPiezaVentaServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        if (request.getParameter("generarPiezaS") != null) {
+        PrintWriter mensaje = response.getWriter();
+        try{
+               if (request.getParameter("generarPiezaS") != null) {
 
             String piezaGenerada = request.getParameter("nombrePiezaGenerada");
             double precioGenerada = Double.valueOf(request.getParameter("precioPiezaGenerada"));
             ConexionSQL.agregarPiezaVenta(piezaGenerada, precioGenerada);
 
         }
-        response.sendRedirect("ComprarPiezas.jsp");
+        response.sendRedirect("AreaFabrica.jsp");
+        }catch (NumberFormatException e) {
+            mensaje.printf("<html><body><center><h1>El término: " + request.getParameter("precioPiezaGenerada") + " no es un valor numérico</h1></center></body></html>");
+
+        }
+     
 
     }
 

@@ -6,6 +6,7 @@
 package com.mycompany.proyecto1ipc2;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpSession;
@@ -187,7 +188,7 @@ public class ConexionSQL {
     public static void traerTablaPiezasHistorial(){
         try {
             iniciarConexion();
-            result=stmt.executeQuery("Select * from piezas;");
+            result=stmt.executeQuery("Select * from piezas order by id desc;");
         } catch (SQLException ex) {
             Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -213,13 +214,97 @@ public class ConexionSQL {
     public static void agregarPiezaVenta(String nombre, double precio){
          try {
             iniciarConexion();
-            stmt.executeQuery("INSERT INTO tiendapiezas(nombre,precio) values('"+nombre+"',"+precio+");");
-            /*PreparedStatement stmt=con.prepareStatement("insert into tiendapiezas(nombre,precio) values(?,?);");
+            //stmt.executeUpdate("INSERT INTO tiendapiezas(nombre,precio) values('"+nombre+"',"+precio+");");
+            PreparedStatement stmt=con.prepareStatement("insert into tiendapiezas(nombre,precio) values(?,?);");
             stmt.setString(1, nombre);
             stmt.setDouble(2, precio);
-            stmt.executeQuery();*/
+            stmt.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+
+                }
+            }
+        }
+    }
+    public static void agregarMuebleVenta(String nombreMueble, double precio){
+         try {
+            iniciarConexion();
+            PreparedStatement stmt=con.prepareStatement("insert into tiendamuebles(nombre,precio) values(?,?);");
+            stmt.setString(1, nombreMueble);
+            stmt.setDouble(2, precio);
+            stmt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+
+                }
+            }
+        }
+    }
+    public static void traerMueblesParaGenerar(){
+        try {
+            iniciarConexion();
+            result=stmt.executeQuery("Select * from tiendamuebles order by nombre;");
+        } catch (SQLException ex) {
+            Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+    }
+    public static void traerIdPiezasVerificacion(String id){
+         try {
+            iniciarConexion();
+            PreparedStatement query = con.prepareStatement("SELECT * FROM piezas WHERE id like ?;");
+            query.setString(1, "%" +id + "%");  
+            result=query.executeQuery();
+         } catch (SQLException ex) {
+            Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+    }
+    public static void almacenarMueblesEnsamblados(String piezasUsadas,HttpSession sesion, double costo, String nombre){
+         try {
+            iniciarConexion();
+            PreparedStatement stmt=con.prepareStatement("insert into muebles(piezasUsadas,usuarioEnsamblador,fechaEnsamble,costo,tipo,aLaVenta,vendido) values(?,?,?,?,?,0,0);");
+            stmt.setString(1, piezasUsadas);
+            stmt.setInt(2, Integer.parseInt((String) sesion.getAttribute("id")));
+            stmt.setDate(3, Date.valueOf(LocalDate.MAX));
+            stmt.setDouble(4, costo);
+            stmt.setString(5, nombre);
+            stmt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+
+                }
+            }
+        }
+    }
+    public static void cambiarUsoPiezas(String ids){
+        int id=Integer.parseInt(ids);
+        try {
+            iniciarConexion();
+            stmt.executeUpdate("update piezas set usada=1 where id="+id+";");
+        } catch (SQLException ex) {
+            Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+
+                }
+            }
         }
     }
 }

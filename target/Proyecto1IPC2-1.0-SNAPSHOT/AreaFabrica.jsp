@@ -38,12 +38,17 @@
                     </a>
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
+                            <li><a href="#" id="ensamble"><img src="https://img.icons8.com/nolan/30/maintenance.png"/>Ensamblar muebles</a></li>
+                            <li><a href="#" id="generarMuebles"><img src="https://img.icons8.com/nolan/30/office-chair-2.png"/>Generar muebles</a></li>
+                            <li> <a href="#" id="generarPiezas"><img src="https://img.icons8.com/nolan/30/amazon-s3.png"/>Generar piezas</a></li>
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="Images/AreaFabrica.png" class="user-image" alt="User Image">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                     <span class="hidden-xs"> <%=sesion.getAttribute("usuario")%> </span>
                                 </a>
+
+
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
                                     <li class="user-header">
@@ -97,7 +102,6 @@
                             </a>
                             <ul class="treeview-menu">
 
-                                <li><a href="#"><img src="https://img.icons8.com/nolan/30/maintenance.png"/>Ensamblar muebles</a></li>
                                 <li><a href="#" id="libro"></i><img src="https://img.icons8.com/nolan/30/literature.png"/>Libro de ensamble</a></li>
 
                             </ul>
@@ -108,8 +112,6 @@
                             <ul class="treeview-menu">
 
                                 <li><a href="#" id="compras"><img src="https://img.icons8.com/nolan/30/impossible-shapes.png"/>Piezas</a></li>
-                                <li><a href="#" id="generarPiezas"><img src="https://img.icons8.com/nolan/30/amazon-s3.png"/>Generar piezas</a></li>
-
                             </ul>
                         </li>
                         <li class="treeview">
@@ -175,6 +177,7 @@
                 </section>
                 <fieldset>
                     <div  id="Contenido">
+
 
                         <script type="text/javascript" src="Js/BotonesFabrica.js"></script>
                     </div>
