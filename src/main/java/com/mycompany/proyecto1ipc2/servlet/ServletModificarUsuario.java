@@ -44,7 +44,7 @@ public class ServletModificarUsuario extends HttpServlet {
             } else if (areaPerteneciente.equals("2")) {
                 response.sendRedirect("AreaVentas.jsp");
             } else if (areaPerteneciente.equals("3")) {
-                response.sendRedirect("AreaAdministracion.jsp");
+                response.sendRedirect("AreaAdministrador.jsp");
             }
         }
     }

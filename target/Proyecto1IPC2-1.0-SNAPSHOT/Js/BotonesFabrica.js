@@ -178,4 +178,64 @@
         xhr.send();
     }
 })();
+(function(){    
+    var button=document.querySelector("#almacenDeMueblesEnsamblados");
+    var divContenedor = document.getElementById("Contenido");
+    button.addEventListener("click", obtenerHTML,true);
+    function obtenerHTML(e){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange= function(){
+            if(xhr.status===200){
+                divContenedor.innerHTML = xhr.responseText;
+            }
+        };
+        xhr.open("get","DelFabricador/AlmacenDeMuebles.jsp",true);
+        xhr.send();
+    }
+})();
+(function(){    
+    var button=document.querySelector("#historialMuebles");
+    var divContenedor = document.getElementById("Contenido");
+    button.addEventListener("click", obtenerHTML,true);
+    function obtenerHTML(e){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange= function(){
+            if(xhr.status===200){
+                divContenedor.innerHTML = xhr.responseText;
+            }
+        };
+        xhr.open("get","DelFabricador/HistorialMuebles.jsp",true);
+        xhr.send();
+    }
+})();
+(function(){    
+    var button=document.querySelector("#registrarMueble");
+    var divContenedor = document.getElementById("Contenido");
+    button.addEventListener("click", obtenerHTML,true);
+    function obtenerHTML(e){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange= function(){
+            if(xhr.status===200){
+                divContenedor.innerHTML = xhr.responseText;
+            }
+        };
+        xhr.open("get","DelFabricador/PasarMuebleAventa.jsp",true);
+        xhr.send();
+    }
+})();
+(function(){    
+    var button=document.querySelector("#compraDeAgotadas");
+    var divContenedor = document.getElementById("Contenido");
+    button.addEventListener("click", obtenerHTML,true);
+    function obtenerHTML(e){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange= function(){
+            if(xhr.status===200){
+                divContenedor.innerHTML = xhr.responseText;
+            }
+        };
+        xhr.open("get","DelFabricador/ComprarPiezas.jsp",true);
+        xhr.send();
+    }
+})();
 

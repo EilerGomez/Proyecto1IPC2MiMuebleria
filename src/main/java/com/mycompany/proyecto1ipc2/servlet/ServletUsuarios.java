@@ -43,15 +43,16 @@ public class ServletUsuarios extends HttpServlet {
                     while (ConexionSQL.result.next()) {
                         sesion.setAttribute("logueado", 1);
                         sesion.setAttribute("usuario", ConexionSQL.result.getString("nombre"));
-                         sesion.setAttribute("area", ConexionSQL.result.getString("area"));
+                        sesion.setAttribute("area", ConexionSQL.result.getString("area"));
                         sesion.setAttribute("apellido", ConexionSQL.result.getString("apellido"));
                         sesion.setAttribute("id", ConexionSQL.result.getString("id"));
                         response.setContentType("text/html;charset=UTF-8");
-                        if (area.equals("3")) {
-                            response.sendRedirect("AreaAdministracion.jsp");
-                        } else if (area.equals("2")) {
+                        
+                        if (ConexionSQL.result.getString("area").equals("3")) {
+                            response.sendRedirect("AreaAdministrador.jsp");
+                        } else if (ConexionSQL.result.getString("area").equals("2")) {
                             response.sendRedirect("AreaVentas.jsp");
-                        } else if (area.equals("1")) {
+                        } else if (ConexionSQL.result.getString("area").equals("1")) {
                             response.sendRedirect("AreaFabrica.jsp");
                         }
                         

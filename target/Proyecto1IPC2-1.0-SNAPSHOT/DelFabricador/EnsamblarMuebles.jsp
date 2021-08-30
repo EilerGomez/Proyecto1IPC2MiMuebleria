@@ -12,13 +12,14 @@
         <link href="Css/bootstrap-reboot.css" rel="stylesheet" type="text/css"/>
 
     </head>
-    <body bgcolor="FFCECB">
+    <body style="background-color: #88cbd4">
         <%
             // validar usuario y contraseña:
             HttpSession sesion = request.getSession();
             if (sesion.getAttribute("logueado") == null || sesion.getAttribute("logueado").equals("0")) {
                 response.sendRedirect("index.jsp");
             }
+           String piezas[]= new String[servletNumeroPiezasMueble.numeroPiezas];
         %>
         <div class="container">
             <nav class="navbar navbar-light bg-light">
@@ -41,7 +42,7 @@
                                     ConexionSQL.traerMueblesParaGenerar();
                                     while(ConexionSQL.result.next()){
                                 %>
-                                <option value="<%=ConexionSQL.result.getString("nombre")%>"><%=ConexionSQL.result.getString("nombre")%></option>
+                                <option value="<%=ConexionSQL.result.getString("nombre")%>"><%=ConexionSQL.result.getString("nombre")%> (Q.<%=ConexionSQL.result.getString("precio")%>)</option>
                                 <%
                                     }
                                 ConexionSQL.result.close();
@@ -58,9 +59,10 @@
                             <div>
                                 <%
                                     for (int i = 1; i <= servletNumeroPiezasMueble.numeroPiezas; i++) {
+                                        //piezas[i]=String.valueOf(i);
                                 %>
                                 <div>
-                                    <input type="text" class="form-control" name="Pieza<%=i%>" placeholder="ingrese el id de pa pieza <%=i%>" required="requerido"> <br>
+                                    <input type="text" class="form-control" name="<%=String.valueOf(i)%>" placeholder="ingrese el id de la pieza <%=i%>" required="requerido"> <br>
                                 </div>
 
                                 <%
@@ -68,10 +70,43 @@
                                 %>
                             </div>
                         </div>
-                            <a ><button type="submit" class="btn btn-primary ml-3 mb-3" name="ensamblar">Aceptar</button></a>
+                            
+                            <div class="col-md-6">
+                                <div class="col-md-6">
+                                    <h6> Ingrese la fecha en formato año/mes/día</h6>
+                                </div>
+                                <select class="form-select" aria-label="Default select example" name="comboanio">
+                                    <%
+                                    for(int i=2020; i<=2030;i++){
+                                    %>
+                                    <option value="<%=i%>"><%=i%></option>
+                                    <%
+                                        }
+                                    %>
+                                </select>
+                                <select class="form-select" aria-label="Default select example" name="comboMes">
+                                    <%
+                                    for(int i=1; i<=12;i++){
+                                    %>
+                                    <option value="<%=i%>"><%=i%></option>
+                                    <%
+                                        }
+                                    %>
+                                </select>
+                                 <select class="form-select" aria-label="Default select example" name="comboDia">
+                                    <%
+                                    for(int i=1; i<=31;i++){
+                                    %>
+                                    <option value="<%=i%>"><%=i%></option>
+                                    <%
+                                        }
+                                    %>
+                                </select>
+                            </div>
+                                <a ><button type="submit" class="btn btn-primary ml-3 mb-3" name="ensamblar">Aceptar</button></a>
                     </form>
                     <div class="btn">
-                        <li><a href="#" id="traerTablaPiezas"><img src="https://img.icons8.com/cute-clipart/30/000000/bulleted-list.png"/>Traer Piezas</a></li>
+                        <li><a href="#" id="traerTablaPiezas" class="btn btn-success"><img src="https://img.icons8.com/cute-clipart/30/000000/bulleted-list.png"/>Traer Piezas No Usadas</a></li>
 
                     </div>
                 </div>

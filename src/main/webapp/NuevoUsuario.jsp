@@ -1,7 +1,10 @@
 <%@page import="com.mycompany.proyecto1ipc2.ConexionSQL"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html style="background-color: #7caaca;
+      margin-top: 250px;
+      margin-left: 400px;
+      margin-right: 400px;">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>New User</title>
@@ -10,7 +13,7 @@
     </head>
     <body>
         <div class="container">
-            <div class="row">
+            <div class="row" style="background-color: #50d7ff">
                 <div class="col-sm">
                     <form action="ServletNuevoUsuario" method="post">
                         <div class="mb-3">
@@ -37,12 +40,12 @@
                         </select>
                         <div class="mb-3"></div> 
                         <div class="mb-3"></div>
-                        <a class="btn btn-danger" href="AreaAdministracion.jsp">Cancelar<img src="https://img.icons8.com/color/48/000000/back-sorting.png"/></a>
+                        <a class="btn btn-danger" href="AreaAdministrador.jsp">Cancelar<img src="https://img.icons8.com/color/48/000000/back-sorting.png"/></a>
                         <button type="submit" class="btn btn-primary" name="guardar">Guardar<img src="https://img.icons8.com/color/48/000000/save-all.png"/></button>
                     </form>
                 </div>
             </div>
         </div>
-        
+
     </body>
 </html>

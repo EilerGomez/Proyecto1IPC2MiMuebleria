@@ -39,7 +39,7 @@
                                 <label for="exampleInputPassword1" class="form-label">Ingrese la cantidad que desee comprar:</label>
                                 <select class="form-select" aria-label="Default select example" name="comboboxCantidadPiezas">
                                     <%
-                                        for (int i = 1; i <= 10; i++) {
+                                        for (int i = 1; i <= 20; i++) {
                                     %>
                                     <option value="<%=i%>"><%=i%></option>
                                     <%
@@ -47,7 +47,36 @@
                                     %>
                                 </select>
                             </div>
-                        </div>
+                                <h6> Ingrese la fecha en formato año/mes/día</h6>
+
+                                <select class="form-select" aria-label="Default select example" name="comboanio">
+                                    <%
+                                        for (int i = 2020; i <= 2030; i++) {
+                                    %>
+                                    <option value="<%=i%>"><%=i%></option>
+                                    <%
+                                        }
+                                    %>
+                                </select>
+                                <select class="form-select" aria-label="Default select example" name="comboMes">
+                                    <%
+                                        for (int i = 1; i <= 12; i++) {
+                                    %>
+                                    <option value="<%=i%>"><%=i%></option>
+                                    <%
+                                        }
+                                    %>
+                                </select>
+                                <select class="form-select" aria-label="Default select example" name="comboDia">
+                                    <%
+                                        for (int i = 1; i <= 31; i++) {
+                                    %>
+                                    <option value="<%=i%>"><%=i%></option>
+                                    <%
+                                        }
+                                    %>
+                                </select>
+                        </div> <br>
                         <button type="submit" class="btn btn-primary" name="ComprarPiezaS">Comprar</button>
                     </form>
                 </div>

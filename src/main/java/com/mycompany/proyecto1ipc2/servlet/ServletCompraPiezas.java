@@ -26,6 +26,7 @@ public class ServletCompraPiezas extends HttpServlet {
             throws ServletException, IOException {
         PrintWriter mensaje = response.getWriter();
         String tipo = request.getParameter("comboboxPiezas");
+         String fecha = (request.getParameter("comboanio") + "-" + request.getParameter("comboMes") + "-" + request.getParameter("comboDia"));
         double precio = 0;
         double gasto = 0;
         double capital = 0;
@@ -47,7 +48,7 @@ public class ServletCompraPiezas extends HttpServlet {
                     ConexionSQL.obteneridPieza();
                     while (ConexionSQL.result.next()) {
                         sesion.setAttribute("id", ConexionSQL.result.getString("id"));
-                        ConexionSQL.agregarGastoAInventario(gasto, cantidad, sesion, capital);
+                        ConexionSQL.agregarGastoAInventario(gasto, cantidad, sesion, capital,fecha);
                     }
                 }
                 ConexionSQL.con.close();

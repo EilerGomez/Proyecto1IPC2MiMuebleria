@@ -25,7 +25,8 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Tipo</th>
                                 <th scope="col">Costo de compra</th>
-                                
+                                <th scope="col">Acciones-</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -38,7 +39,10 @@
                                 <th scope="row"><%=ConexionSQL.result.getString(1)%></th>
                                 <th><%=ConexionSQL.result.getString(2)%></th>
                                 <th><%=ConexionSQL.result.getString(3)%></th>
-                                
+                                <th><a  href="DelFabricador/EditarPieza.jsp?id=<%=ConexionSQL.result.getString(1)%>&tipo=<%=ConexionSQL.result.getString(2)%>&costoCompra=<%=ConexionSQL.result.getString(3)%>
+                                        "><img src="https://img.icons8.com/nolan/30/edit-property.png"/></a>
+                                    <a class="icon mb-3" href="DelFabricador/EliminarPieza.jsp?id=<%=ConexionSQL.result.getString(1)%>"><img src="https://img.icons8.com/nolan/30/delete-property.png"/></a>
+                                </th> 
                             </tr>
                             <%
 
