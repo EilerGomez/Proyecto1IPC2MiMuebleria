@@ -1,0 +1,14 @@
+PIEZA("asasdasda",12s)
+PIEZA("asasdasda","asassasa"
+USUARIO("asasas","Aasasdad",12)
+USUARIO("usuario error",Aasasdad",12)
+USUARIO("asasas","Aasasdad",14
+USUARIO("asasas","Aasasdad",14a)
+PIEZA("pieza1",23.90)
+MUEBLE("mueble1aaaa",12.3)
+MUEBLE("MUEBLE ERROR,1)
+CLIENTE("cliente","156","direccion1")
+CLIENTE("nombre apellido","157","direccion1")
+CLIENTE("clienteNombre","158","direccion1","direccion2")
+CLIENTE("clienteNombre","159","direccion1","direccion2","Direccion3")
+CLIENTE("cliente","nitCliente","direccion1","direccion2)
