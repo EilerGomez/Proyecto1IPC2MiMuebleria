@@ -12,6 +12,15 @@
     </head>
 
     <body>
+        <%
+           HttpSession sesion = request.getSession();
+            if (sesion.getAttribute("logueado") == null || sesion.getAttribute("logueado").equals("0")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+            if (!sesion.getAttribute("area").equals("1")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+        %>
         <div class="container margin">
             <div  class="row">
                 <div class="col-sm">

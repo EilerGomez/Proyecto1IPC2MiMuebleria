@@ -29,7 +29,7 @@ public class ConSQLVentas {
     public static void iniciarConexionData() {
         try {
             Class.forName(driver);
-            conect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mimuebleria", "root", "mysql");
+            conect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mimuebleria", "eiler", "eiler123");
             st = conect.createStatement();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);

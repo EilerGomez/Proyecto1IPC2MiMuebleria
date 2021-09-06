@@ -6,7 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html style="margin-top: 50px">
+<html style="margin-top: 200px;
+      background-color: #a0b5cc;">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -14,15 +15,19 @@
 
         <title>Editar Piezas</title>
     </head>
-    <body bgcolor="#90b9e2">
+    <body style="margin-left: 300px;
+          margin-right: 700px">
         <%
             HttpSession sesion = request.getSession();
             if (sesion.getAttribute("logueado") == null || sesion.getAttribute("logueado").equals("0")) {
                 response.sendRedirect(request.getContextPath() + "/index.jsp");
             }
+            if (!sesion.getAttribute("area").equals("1")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
         %>
 
-        <div class="container margin">
+        <div class="container margin" style="background-color: bisque;">
             <div  class="row">
                 <div class="col-sm">
                     <form class="row g-3 margin-r-5" method="post" action="servletEditarPiezas">

@@ -148,36 +148,6 @@
         xhr.send();
     }
 })();
-/*(function(){    
-    var button=document.querySelector("#traerTablaPiezas");
-    var divContenedor = document.getElementById("contenidoTabla");
-    button.addEventListener("click", obtenerHTML,true);
-    function obtenerHTML(e){
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange= function(){
-            if(xhr.status===200){
-                divContenedor.innerHTML = xhr.responseText;
-            }
-        };
-        xhr.open("get","DelFabricador/AlmacenDepiezas.jsp",true);
-        xhr.send();
-    }
-})();*/
-(function(){    
-    var button=document.querySelector("#generarMuebles");
-    var divContenedor = document.getElementById("Contenido");
-    button.addEventListener("click", obtenerHTML,true);
-    function obtenerHTML(e){
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange= function(){
-            if(xhr.status===200){
-                divContenedor.innerHTML = xhr.responseText;
-            }
-        };
-        xhr.open("get","DelFabricador/GenerarMuebles.jsp",true);
-        xhr.send();
-    }
-})();
 (function(){    
     var button=document.querySelector("#almacenDeMueblesEnsamblados");
     var divContenedor = document.getElementById("Contenido");
@@ -238,4 +208,21 @@
         xhr.send();
     }
 })();
+
+/*(function(){    
+    var button=document.querySelector("#traerTablaPiezas");
+    var divContenedor = document.getElementById("contenidoTabla");
+    button.addEventListener("click", obtenerHTML,true);
+    function obtenerHTML(e){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange= function(){
+            if(xhr.status===200){
+                divContenedor.innerHTML = xhr.responseText;
+            }
+        };
+        xhr.open("get","DelFabricador/AlmacenDepiezas.jsp",true);
+        xhr.send();
+    }
+})();*/
+
 

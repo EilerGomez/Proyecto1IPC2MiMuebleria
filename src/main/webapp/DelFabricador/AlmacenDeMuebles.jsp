@@ -1,8 +1,4 @@
-<%-- 
-    Document   : AlmacenDeMuebles
-    Created on : 26/08/2021, 10:54:34 PM
-    Author     : HP
---%>
+
 
 <%@page import="com.mycompany.proyecto1ipc2.ConexionSQL"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -15,6 +11,15 @@
 
     </head>
     <body>
+        <%
+           HttpSession sesion = request.getSession();
+            if (sesion.getAttribute("logueado") == null || sesion.getAttribute("logueado").equals("0")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+            if (!sesion.getAttribute("area").equals("1")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+        %>
         <div class="container margin">
             <div  class="row">
                 <div class="col-sm">
@@ -46,7 +51,7 @@
                                 <th><%=ConexionSQL.result.getString(5)%></th>
                                 <th><%=ConexionSQL.result.getString(6)%></th>
                                 <th><a  href="DelFabricador/EditarMueble.jsp?id=<%=ConexionSQL.result.getString(1)%>&piezas=<%=ConexionSQL.result.getString(2)%>&usuario=<%=ConexionSQL.result.getString(3)%>
-                                       &fecha=<%=ConexionSQL.result.getString(4)%>&costo=<%=ConexionSQL.result.getString(5)%>&tipo=<%=ConexionSQL.result.getString(6)%>"><img src="https://img.icons8.com/nolan/30/edit-property.png"/></a>
+                                        &fecha=<%=ConexionSQL.result.getString(4)%>&costo=<%=ConexionSQL.result.getString(5)%>&tipo=<%=ConexionSQL.result.getString(6)%>"><img src="https://img.icons8.com/nolan/30/edit-property.png"/></a>
                                     <a class="icon mb-3" href="DelFabricador/EliminarMueble.jsp?id=<%=ConexionSQL.result.getString(1)%>"><img src="https://img.icons8.com/nolan/30/delete-property.png"/></a>
                                 </th>
                             </tr>

@@ -14,6 +14,17 @@
 
 </head>
 <body style="background-color: #586580">
+     <%
+
+            // validar usuario y contraseña:
+            HttpSession sesion = request.getSession();
+            if (sesion.getAttribute("logueado") == null || sesion.getAttribute("logueado").equals("0")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+            if (!sesion.getAttribute("area").equals("2")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+        %>
     <section style="margin-left: 200px;
              margin-right: 200px;
              margin-top: 300px;">

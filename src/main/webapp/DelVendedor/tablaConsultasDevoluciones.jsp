@@ -21,6 +21,16 @@
           background-color: #5b7095;
           margin-left: 50px;
           margin-right: 50px;">
+         <%
+            // validar usuario y contraseña:
+            HttpSession sesion = request.getSession();
+            if (sesion.getAttribute("logueado") == null || sesion.getAttribute("logueado").equals("0")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+            if (!sesion.getAttribute("area").equals("2")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+        %>
         <%
             String nitCliente = request.getParameter("nitCliente");
             String fechaDe = request.getParameter("comboanio") + "-" + request.getParameter("comboMes") + "-" + request.getParameter("comboDia");

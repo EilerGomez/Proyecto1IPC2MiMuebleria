@@ -2,19 +2,24 @@ cmd.exe
 /X
 /C
 ""C:\Program Files\Java\jdk1.8.0_291\jre\..\bin\javadoc.exe" @options @argfile"
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\allclasses-frame.html = 1630306660563
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\allclasses-noframe.html = 1630306660564
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\argfile = 1630306659038
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\constant-values.html = 1630306660469
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\deprecated-list.html = 1630306660560
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\help-doc.html = 1630306660572
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\index-all.html = 1630306660555
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\index.html = 1630306660566
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\options = 1630306659036
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\overview-frame.html = 1630306660428
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\overview-summary.html = 1630306660569
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\overview-tree.html = 1630306660542
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\package-list = 1630306660426
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\script.js = 1630306660574
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\serialized-form.html = 1630306660480
-C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\stylesheet.css = 1630197393994
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\agregarCapitalServlet.html = 1630892532792
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\allclasses-frame.html = 1630946677055
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\allclasses-noframe.html = 1630946677057
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\argfile = 1630946675429
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\constant-values.html = 1630946676946
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\deprecated-list.html = 1630946677053
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\help-doc.html = 1630946677067
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\index-all.html = 1630946677049
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\index.html = 1630946677059
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\options = 1630946675428
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\overview-frame.html = 1630946676896
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\overview-summary.html = 1630946677061
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\overview-tree.html = 1630946677034
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\package-frame.html = 1630892533154
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\package-list = 1630946676893
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\package-summary.html = 1630892533163
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\package-tree.html = 1630892533166
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\package-use.html = 1630892533289
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\script.js = 1630946677068
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\serialized-form.html = 1630946676958
+C:\Users\HP\Documents\Universidad\Programación\IPC2\Practicas\practica_ConexionaSQL\Proyecto1IPC2\target\apidocs\stylesheet.css = 1630557538329

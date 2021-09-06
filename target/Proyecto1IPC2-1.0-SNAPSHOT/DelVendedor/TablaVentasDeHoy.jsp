@@ -21,10 +21,25 @@
           background-color: #58667f;
           margin-left: 50px;
           margin-right: 50px;">
+         <%
+
+            // validar usuario y contraseña:
+            HttpSession sesion = request.getSession();
+            if (sesion.getAttribute("logueado") == null || sesion.getAttribute("logueado").equals("0")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+            if (!sesion.getAttribute("area").equals("2")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+        %>
+        <%
+        java.sql.Date date = new java.sql.Date(new java.util.Date().getTime());
+        %>
         <div class="container margin" style="    background-color: #f58080;">
+             <br> <a href="<%=request.getContextPath()%>/AreaVentas.jsp" type="submit" class="btn btn-warning" style="margin-left: 1020px">Regresar</a>
             <div  class="row">
                 <div class="col-sm">
-                    <h2>COMPRAS DEL DIA DE HOY</h2>
+                    <h2>COMPRAS DEL DIA DE HOY <%=date.toString()%></h2>
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -40,7 +55,7 @@
                         <tbody>
 
                             <%
-                                java.sql.Date date = new java.sql.Date(new java.util.Date().getTime());
+                                
                                 
                                 ConSQLVentas.traerVentasDeHoy((date.toString()));
                                 while (ConSQLVentas.resultado.next()) {
@@ -66,6 +81,6 @@
             </div><!-- comment -->
 
         </div>
-        <br> <a href="<%=request.getContextPath()%>/AreaVentas.jsp" type="submit" class="btn btn-warning" style="margin-left: 340px">Regresar</a>
+       
     </body>
 </html>

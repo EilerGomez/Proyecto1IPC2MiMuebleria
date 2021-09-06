@@ -13,6 +13,15 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <%
+           HttpSession sesion = request.getSession();
+            if (sesion.getAttribute("logueado") == null || sesion.getAttribute("logueado").equals("0")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+            if (!sesion.getAttribute("area").equals("1")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+        %>
         <h3>Presiona la figura para registrar los muebles a las ventas, si deseas editarlos ve al almacén de muebles</h3>
         <h2>No se aceptarán cambios despues de haber hecho su elección</h2>
         <div class="container margin">

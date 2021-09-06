@@ -7,6 +7,9 @@
     if (sesion.getAttribute("logueado") == null || sesion.getAttribute("logueado").equals("0")) {
         response.sendRedirect("index.jsp");
     }
+    if (!sesion.getAttribute("area").equals("1")) {
+        response.sendRedirect("index.jsp");
+    }
 %>
 <html>
     <head>
@@ -40,7 +43,6 @@
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
                             <li><a href="#" id="ensamble"><img src="https://img.icons8.com/nolan/30/maintenance.png"/>Ensamblar muebles</a></li>
-                            <li><a href="#" id="generarMuebles"><img src="https://img.icons8.com/nolan/30/office-chair-2.png"/>Generar muebles</a></li>
                             <li> <a href="#" id="generarPiezas"><img src="https://img.icons8.com/nolan/30/amazon-s3.png"/>Generar piezas</a></li>
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">

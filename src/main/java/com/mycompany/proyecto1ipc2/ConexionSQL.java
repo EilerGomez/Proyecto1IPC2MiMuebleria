@@ -24,7 +24,7 @@ public class ConexionSQL {
     public static void iniciarConexion() {
         try {
             Class.forName(driver);
-            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mimuebleria", "root", "mysql");
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mimuebleria", "eiler", "eiler123");
             stmt = con.createStatement();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);
@@ -245,25 +245,7 @@ public class ConexionSQL {
         }
     }
 
-    public static void agregarMuebleVenta(String nombreMueble, double precio) {
-        try {
-            iniciarConexion();
-            PreparedStatement stmt = con.prepareStatement("insert into tiendamuebles(nombre,precio) values(?,?);");
-            stmt.setString(1, nombreMueble);
-            stmt.setDouble(2, precio);
-            stmt.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(ConexionSQL.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            if (con != null) {
-                try {
-                    con.close();
-                } catch (SQLException ex) {
-
-                }
-            }
-        }
-    }
+    
 
     public static void traerMueblesParaGenerar() {
         try {

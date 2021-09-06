@@ -24,7 +24,10 @@
             // validar usuario y contraseña:
             HttpSession sesion = request.getSession();
             if (sesion.getAttribute("logueado") == null || sesion.getAttribute("logueado").equals("0")) {
-                response.sendRedirect("index.jsp");
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+            if (!sesion.getAttribute("area").equals("2")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
             }
         %>
         <div class="container margin">

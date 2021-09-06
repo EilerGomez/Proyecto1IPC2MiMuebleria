@@ -11,6 +11,15 @@
 
     </head>
     <body class="cuerpo">
+        <%
+            HttpSession sesion = request.getSession();
+            if (sesion.getAttribute("logueado") == null || sesion.getAttribute("logueado").equals("0")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+            if (!sesion.getAttribute("area").equals("1")) {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
+        %>
         <div>
             <nav >
                 <div class="container-fluid ml-10">
@@ -47,35 +56,35 @@
                                     %>
                                 </select>
                             </div>
-                                <h6> Ingrese la fecha en formato año/mes/día</h6>
+                            <h6> Ingrese la fecha en formato año/mes/día</h6>
 
-                                <select class="form-select" aria-label="Default select example" name="comboanio">
-                                    <%
-                                        for (int i = 2020; i <= 2030; i++) {
-                                    %>
-                                    <option value="<%=i%>"><%=i%></option>
-                                    <%
-                                        }
-                                    %>
-                                </select>
-                                <select class="form-select" aria-label="Default select example" name="comboMes">
-                                    <%
-                                        for (int i = 1; i <= 12; i++) {
-                                    %>
-                                    <option value="<%=i%>"><%=i%></option>
-                                    <%
-                                        }
-                                    %>
-                                </select>
-                                <select class="form-select" aria-label="Default select example" name="comboDia">
-                                    <%
-                                        for (int i = 1; i <= 31; i++) {
-                                    %>
-                                    <option value="<%=i%>"><%=i%></option>
-                                    <%
-                                        }
-                                    %>
-                                </select>
+                            <select class="form-select" aria-label="Default select example" name="comboanio">
+                                <%
+                                    for (int i = 2020; i <= 2030; i++) {
+                                %>
+                                <option value="<%=i%>"><%=i%></option>
+                                <%
+                                    }
+                                %>
+                            </select>
+                            <select class="form-select" aria-label="Default select example" name="comboMes">
+                                <%
+                                    for (int i = 1; i <= 12; i++) {
+                                %>
+                                <option value="<%=i%>"><%=i%></option>
+                                <%
+                                    }
+                                %>
+                            </select>
+                            <select class="form-select" aria-label="Default select example" name="comboDia">
+                                <%
+                                    for (int i = 1; i <= 31; i++) {
+                                %>
+                                <option value="<%=i%>"><%=i%></option>
+                                <%
+                                    }
+                                %>
+                            </select>
                         </div> <br>
                         <button type="submit" class="btn btn-primary" name="ComprarPiezaS">Comprar</button>
                     </form>
